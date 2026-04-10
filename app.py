@@ -1,9 +1,26 @@
 
 Products = ["Mocha", "Americano", "Chai Latte", "Cappaccino", "Cheese Sandwich"]
-Orders = {
-    'Alice': ['address', 'phone number',"Customer Adress" , "Order Status"],
-    'Bob': ['address', 'phone number', "Customer Adress" ,"Order Status"],
+orders = []
+
+# ================================================================================
+
+order = {
+    'customer_name': 'Alice Holmes',
+    'customer_address': '22b Baker Street',
+    'customer_phone_number': '07426 781978',
+    'status': 'preparing',
 }
+orders.append(order)
+
+order = {
+    'customer_name': 'Bob Holmes',
+    'customer_address': '22b Baker Street',
+    'customer_phone_number': '07426 781978',
+    'status': 'preparing',
+}
+orders.append(order)
+# ================================================================================
+
 
 #print("0: exit app")
 #print("1: Products")
@@ -68,58 +85,86 @@ while is_app_running == True:
 
     elif choice == 2:
         
-        print(f'{Orders}')
-        print('What would you like to do?')
-        print("0. Close app")
-        print("1. Print order list")
-        print("2. Add an order")
-        print("3. Update Order status")
-       
+        print('''
+                ----  CAFFE APP  ----
+                     -- Orders --
+              
+        0: Return to main menu
+        1: View orders
+        2: Add order
+        3: Update order status
+        4: Update order info
+        5: Delete order
+              ''')
+        choice = int(input("Choose an Option:  "))
 
-        choice = int(input("Please select a number: "))
-
-        if choice == 0:
-            is_app_running == False
-            print("Exiting app") 
+        # IF CHOICE == 0:
+            # SOMEONE CAN TAKE THIS ON
         
-        elif choice == 1:
-            print(f'{Orders}')
+        # ELIF CHOICE == 1:
+            # SAHOUR 
 
-        elif choice == 2:
-            customer_name = input("Name for order:")
-            customer_address = input("Address for order:")
-            customer_Phone = input("Phone Number For Order: ")
-            order_status = "Preparing"
-            Orders[customer_name] = [customer_Phone, customer_address, order_status]
+        # ELIF CHOICE == 2:
+            # PAWANDEEP
 
-            print(f"Order for {customer_name} is now {order_status}")
-            print(Orders)
-            # customer name = input(name)
-            # customer address = input(address)
+        # ELIF CHOICE == 3:
+            # MOHAMMED
+        
+        # ELIF CHOICE == 4:
+            # EDWARD 
 
-            # Orders[customer_name] = customer_name
-            # Please build this part together if possible :)
+        # ELIF CHOICE == 5:
+            # ISHAK 
 
-        elif choice == 3:
-            print("Update Order status")
-            list_from_dict = list(Orders.items())
+
+
+
+
+# LETS START FRESH ABOVE, AND LEAVE WEEK TWO'S MESS BEHIND
+# ===========================================================
+
+        # if choice == 0:
+        #     is_app_running == False
+        #     print("Exiting app") 
+        
+        # elif choice == 1:
+        #     print(f'{Orders}')
+
+        # elif choice == 2:
+        #     customer_name = input("Name for order:")
+        #     customer_address = input("Address for order:")
+        #     customer_Phone = input("Phone Number For Order: ")
+        #     order_status = "Preparing"
+        #     Orders[customer_name] = [customer_Phone, customer_address, order_status]
+
+        #     print(f"Order for {customer_name} is now {order_status}")
+        #     print(Orders)
+        #     # customer name = input(name)
+        #     # customer address = input(address)
+
+        #     # Orders[customer_name] = customer_name
+        #     # Please build this part together if possible :)
+
+        # elif choice == 3:
+        #     print("Update Order status")
+        #     list_from_dict = list(Orders.items())
             
-            for i in range(len(list_from_dict)):
-                name = list_from_dict[i][0]
-                current_status = list_from_dict[i][1][3]
-                print(f'{i} Name: {name} | Current Status: {current_status}')
+        #     for i in range(len(list_from_dict)):
+        #         name = list_from_dict[i][0]
+        #         current_status = list_from_dict[i][1][3]
+        #         print(f'{i} Name: {name} | Current Status: {current_status}')
              
-            order_to_update_status= int(input("Select the order number to update: "))
-            selected_order_to_updatestatus = list_from_dict[order_to_update_status][0]
-            status_options = ["Pending", "Preparing", "Out for Delivery", "Delivered"]
-            print("Available Statuses:")
-            for i in range(len(status_options)):
-                print(f"{i}: {status_options[i]}")
+        #     order_to_update_status= int(input("Select the order number to update: "))
+        #     selected_order_to_updatestatus = list_from_dict[order_to_update_status][0]
+        #     status_options = ["Pending", "Preparing", "Out for Delivery", "Delivered"]
+        #     print("Available Statuses:")
+        #     for i in range(len(status_options)):
+        #         print(f"{i}: {status_options[i]}")
 
             
-            user_select_order_status = int(input("Select the new status number: "))
-            new_order_status = status_options[user_select_order_status]
+        #     user_select_order_status = int(input("Select the new status number: "))
+        #     new_order_status = status_options[user_select_order_status]
 
-            Orders[selected_order_to_updatestatus][3] = new_order_status
+        #     Orders[selected_order_to_updatestatus][3] = new_order_status
             
-            print(f"Success.{selected_order_to_updatestatus}'s status updated to {new_order_status}.")
+        #     print(f"Success.{selected_order_to_updatestatus}'s status updated to {new_order_status}.")
