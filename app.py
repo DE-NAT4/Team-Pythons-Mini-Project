@@ -19,6 +19,8 @@ order = {
     'status': 'preparing',
 }
 orders.append(order)
+
+
 # ================================================================================
 
 
@@ -27,7 +29,6 @@ orders.append(order)
 is_app_running = True
 
 while is_app_running == True:
-    Products = ["Mocha", "Americano", "Chai Latte", "Cappaccino", "Cheese Sandwich"]
     print("0: exit app")
     print("1: Open product side")
     print("2: Open the orders side")
@@ -98,14 +99,26 @@ while is_app_running == True:
               ''')
         choice = int(input("Choose an Option:  "))
 
-        # IF CHOICE == 0:
+        if choice == 0:
+            pass
             # SOMEONE CAN TAKE THIS ON
         
         # ELIF CHOICE == 1:
             # SAHOUR 
 
-        # ELIF CHOICE == 2:
-            # PAWANDEEP
+
+        elif choice == 2:
+            customer_name = input('Enter the customer name:  ')
+            customer_address = input('Enter the customer address:  ')
+            customer_phone_number = input('Enter the customer phone number:  ')
+
+            order = {}
+            order['customer_name'] = customer_name
+            order['customer_address'] = customer_address
+            order['customer_phone_number'] = customer_phone_number
+            order['status'] = 'preparing'
+
+            orders.append(order)
 
         # ELIF CHOICE == 3:
             # MOHAMMED
