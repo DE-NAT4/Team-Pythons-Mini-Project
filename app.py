@@ -126,6 +126,53 @@ while is_app_running == True:
         # ELIF CHOICE == 4:
             # EDWARD 
 
+       
+        elif choice == 4:
+            print("--- Current Orders ---")
+            # Print the current orders.  
+            for index, item in enumerate(orders):
+                print(f"Index [{index}]: {item['customer_name']} - {item['status']}")
+
+            # User enters number for which order to update from that list.
+            order_to_update = input("Enter the index of the order to update: ")
+
+            # Check if number is valid
+            if order_to_update.isdigit():
+                order_to_update_index = int(order_to_update)
+
+                if order_to_update_index >= 0 and order_to_update_index < len(orders):
+                    
+                    selected_order = orders[order_to_update_index]
+
+                    print("\nUpdating orders. Press Enter to keep the current value.")
+
+                    # Updating order name
+                    new_order_name = input("New Name (" + selected_order['customer_name'] + "): ")
+                    if new_order_name != "":
+                        selected_order['customer_name'] = new_order_name
+
+                    # Updating Phone Number 
+                    new_phone = input("New Phone Number (" + selected_order['customer_phone_number'] + "): ")
+                    if new_phone != "":
+                        selected_order['customer_phone_number'] = new_phone
+                    
+                    #Updating Address
+                    new_address = input("New Address (" + selected_order['customer_address'] + "): ")
+                    if new_address != "":
+                        selected_order['customer_address'] = new_address
+                    #Updating Order status
+                    new_status = input("New Status (" + selected_order['status'] + "): ")
+                    if new_status != "":
+                        selected_order['status'] = new_status
+
+                        
+                    print("Update complete!")
+                else:
+                    print("Error: Index out of range.")
+            else:
+                print("Error: Please enter a number.")
+
+
         # ELIF CHOICE == 5:
             # ISHAK 
 
