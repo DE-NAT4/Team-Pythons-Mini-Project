@@ -25,6 +25,30 @@ EDWARD == EXTRA STRETCH GOAL XD - Create a function called product_menu()
                                   for when the user selects the product side of
                                   the app: {View Products, Add Products etc}
 
-                                  It should take no inputs and return no output.
-                                  It should look something like the above print
-                                  statement, but it is not critical.
+
+========================================================================================
+                       WEEK THREE PSUEDO CODE  - COURIERS
+
+print('''
+                ----  CAFFE APP  ----
+                     -- Couriers --
+              
+        0: Return to main menu
+        1: View couriers
+        2: Add a courier
+        3: Update courier information
+        4: Delete courier information
+              ''')
+
+
+MOHAMMED == 0
+SAHOUR == 1 
+ISHAK == 2
+PAWAN == 3
+EDWARD == 4
+
+
+EDWARD == EXTRA STRETCH GOAL ===> Move all product related functions to product.py
+                                  and create a new function called update_product(products)
+                                  that takes the product list as input and produces no output. 
+                                  It should do the work of ELIF 3: update product.
