@@ -101,7 +101,7 @@ while is_app_running == True:
 
         if choice == 0:
             pass
-            # SOMEONE CAN TAKE THIS ON
+            # MOHAMMED
         
         # ELIF CHOICE == 1:
             # SAHOUR 
@@ -121,10 +121,7 @@ while is_app_running == True:
             orders.append(order)
 
         # ELIF CHOICE == 3:
-            # MOHAMMED
-        
-        # ELIF CHOICE == 4:
-            # EDWARD 
+            # MOHAMMED 
 
        
         elif choice == 4:
