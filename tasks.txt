@@ -13,10 +13,10 @@ print('''
               ''')
         choice = int(input("Choose an Option:  "))
 
-
+MOHAMMED == 0: Return to main menu
 SAHOUR == 1: VIEW ORDERS
 PAWANDEEP == 2: ADD AN ORDER
-MOHAMMED == 3: UPDATE JUST THE ORDER'S STATUS
+MOHAMMED == 3: UPDATE JUST THE ORDER'S STATUS 
 EDWARD == 4: UPDATE THE WHOLE ORDERS info
 ISHAK == 5: DELETE ORDER
 
