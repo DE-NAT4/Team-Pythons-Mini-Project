@@ -5,6 +5,7 @@ from orders import *
 
 Products = ["Mocha", "Americano", "Chai Latte", "Cappaccino", "Cheese Sandwich"]
 orders = []
+couriers = ['Zohran', 'Yasmin', 'Xavier']
 
 # ================================================================================
 
@@ -48,14 +49,14 @@ while is_app_running == True:
 # This is our product side of the app
 
     elif choice == 1: 
-        print(f"1: {Products}")
-        print("2: Add Product")
-        print("3: Update Product")
-        print("4: Delete Product")
+        display_products_navigation_menu()
         product_choice = int(input("Choose an Option: "))
 
-        if product_choice == 1:
-            print(Products)
+        if choice == 0:
+            pass
+
+        elif product_choice == 1:
+            display_products(Products)
 
         elif product_choice == 2:
             new_product = input("Enter product name: ")
