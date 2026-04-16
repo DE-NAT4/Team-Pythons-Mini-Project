@@ -1,3 +1,7 @@
+from products import *
+from orders import *
+
+# ================================================================================
 
 Products = ["Mocha", "Americano", "Chai Latte", "Cappaccino", "Cheese Sandwich"]
 orders = []
@@ -32,7 +36,8 @@ while is_app_running == True:
     print("0: exit app")
     print("1: Open product side")
     print("2: Open the orders side")
-    choice = int(input("Select 0, 1 or 2: "))
+    print("3: Open the courier side")
+    choice = int(input("Select 0, 1, 2 or 3: "))
 
     if choice == 0: 
         print("Exiting app") 
@@ -174,54 +179,71 @@ while is_app_running == True:
             # ISHAK 
 
 
+# ============================================================================
+# This is the courier side of the app
 
 
-
-# LETS START FRESH ABOVE, AND LEAVE WEEK TWO'S MESS BEHIND
-# ===========================================================
-
-        # if choice == 0:
-        #     is_app_running == False
-        #     print("Exiting app") 
+    elif choice == 3:
         
-        # elif choice == 1:
-        #     print(f'{Orders}')
+        print('''
+                ----  CAFFE APP  ----
+                     -- Couriers --
+              
+        0: Return to main menu
+        1: View couriers
+        2: Add a courier
+        3: Update courier information
+        4: Delete courier information
+              ''')
+        choice = int(input("Choose an Option:  "))
 
-        # elif choice == 2:
-        #     customer_name = input("Name for order:")
-        #     customer_address = input("Address for order:")
-        #     customer_Phone = input("Phone Number For Order: ")
-        #     order_status = "Preparing"
-        #     Orders[customer_name] = [customer_Phone, customer_address, order_status]
+        if choice == 0:
+            # MOHAMMED
+            pass
 
-        #     print(f"Order for {customer_name} is now {order_status}")
-        #     print(Orders)
-        #     # customer name = input(name)
-        #     # customer address = input(address)
+        if choice == 1:
+            # SAHOUR
+            pass
 
-        #     # Orders[customer_name] = customer_name
-        #     # Please build this part together if possible :)
+        if choice == 2:
+            # ISHAK
+            pass
 
-        # elif choice == 3:
-        #     print("Update Order status")
-        #     list_from_dict = list(Orders.items())
-            
-        #     for i in range(len(list_from_dict)):
-        #         name = list_from_dict[i][0]
-        #         current_status = list_from_dict[i][1][3]
-        #         print(f'{i} Name: {name} | Current Status: {current_status}')
-             
-        #     order_to_update_status= int(input("Select the order number to update: "))
-        #     selected_order_to_updatestatus = list_from_dict[order_to_update_status][0]
-        #     status_options = ["Pending", "Preparing", "Out for Delivery", "Delivered"]
-        #     print("Available Statuses:")
-        #     for i in range(len(status_options)):
-        #         print(f"{i}: {status_options[i]}")
+        if choice == 3:
+            # PAWAN 
+            pass
 
-            
-        #     user_select_order_status = int(input("Select the new status number: "))
-        #     new_order_status = status_options[user_select_order_status]
+        if choice == 4:
+            # EDWARD
+            pass
 
-        #     Orders[selected_order_to_updatestatus][3] = new_order_status
-            
-        #     print(f"Success.{selected_order_to_updatestatus}'s status updated to {new_order_status}.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
