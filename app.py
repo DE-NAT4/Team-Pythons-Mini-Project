@@ -110,7 +110,13 @@ while is_app_running == True:
             # MOHAMMED
         
         # ELIF CHOICE == 1:
-            # SAHOUR 
+        elif choice == 1: 
+            print("Current orders: ")
+            if not orders: 
+                print("No orders found.")
+            else: 
+                for order in orders: 
+                    print(order) 
 
 
         elif choice == 2:
