@@ -212,7 +212,14 @@ while is_app_running == True:
 
         if choice == 3:
             # PAWAN 
-            pass
+            print('Here are couriers:')
+            for i in range(len(couriers)):
+                print(f'{i} {couriers[i]}')
+            select_update_list = int(input("Select the courier you would like to change: "))
+            new_courier_name = input("Enter new courier name ")
+            couriers[select_update_list] = new_courier_name
+            print(f"{couriers}")
+            print("Courier successfully updated!")
 
         if choice == 4:
             # EDWARD
