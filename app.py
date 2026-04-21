@@ -214,8 +214,17 @@ while is_app_running == True:
             # PAWAN 
             pass
 
+        #Edward - Delete Courier from the list. 
         if choice == 4:
-            # EDWARD
+            print('Here are the current couriers:')
+            #Print courier names and idexes.
+            for i in range(len(couriers)):
+                print(f'{i} {couriers[i]}') 
+            courier_to_del = int(input("Enter the index of the courier to remove: "))
+
+            couriers.pop(courier_to_del)
+            print(couriers)
+            print("Courier successfully removed")
             pass
 
 
