@@ -109,14 +109,11 @@ while is_app_running == True:
             pass
             # MOHAMMED
         
-        # ELIF CHOICE == 1:
-        elif choice == 1: 
-            print("Current orders: ")
-            if not orders: 
-                print("No orders found.")
-            else: 
-                for order in orders: 
-                    print(order) 
+        
+        elif choice == "1":
+            print("\nOrders List:")
+            for index, order in enumerate(orders):
+                print(f"{index}: {order}")
 
 
         elif choice == 2:
@@ -208,9 +205,10 @@ while is_app_running == True:
             # MOHAMMED
             pass
 
-        if choice == 1:
-            # SAHOUR
-            pass
+        elif choice == 1:
+            print("\nCouriers List:")
+            for index, courier in enumerate(couriers):
+                print(f"{index}: {courier}")
 
         if choice == 2:
             # ISHAK
