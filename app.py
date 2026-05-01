@@ -59,12 +59,8 @@ while is_app_running == True:
             display_products(Products)
 
         elif product_choice == 2:
-            new_product = input("Enter product name: ")
-            Products.append(new_product)
-            print(f" Here is the menu {Products}")
-            print("Product successfully added!")
+            add_product(Products)
         
-
         elif product_choice == 3:
             print('Here are the menu items:')
             for i in range(len(Products)):
@@ -109,8 +105,11 @@ while is_app_running == True:
             pass
             # MOHAMMED
         
-        # ELIF CHOICE == 1:
-            # SAHOUR 
+        
+        elif choice == "1":
+            print("\nOrders List:")
+            for index, order in enumerate(orders):
+                print(f"{index}: {order}")
 
         elif choice == 2:
             customer_name = input('Enter the customer name:  ')
@@ -204,8 +203,23 @@ while is_app_running == True:
                 print("Error: Please enter a number.")
 
 
-        # ELIF CHOICE == 5:
-            # ISHAK 
+        # ELIF CHOICE == 5: Ishak
+        
+        elif choice == 5:
+            print("Current Orders")
+            for index, item in enumerate(orders): #enumerate gives a cleaner output compared to for in range
+                print(f"Index [{index}], {item['customer_name']}")
+            order_delete = input("Enter the index of the order you want to delete: ")
+            if order_delete. isdigit():#checks to see if its even an integer
+                if int(order_delete) >= 0 and int(order_delete) < len(orders):
+                    orders.pop(int(order_delete))
+                    print(f"{orders}")
+                    print("Order successfully removed")
+                else:
+                    print("Invalid index entered. Please try again")
+            else:
+                print("Please enter a number") # make sure to push (ask for verification first)
+                   
 
 
 # ============================================================================
@@ -230,9 +244,10 @@ while is_app_running == True:
             # MOHAMMED
             pass
 
-        if choice == 1:
-            # SAHOUR
-            pass
+        elif choice == 1:
+            print("\nCouriers List:")
+            for index, courier in enumerate(couriers):
+                print(f"{index}: {courier}")
 
         if choice == 2:
             # ISHAK
@@ -249,8 +264,17 @@ while is_app_running == True:
             print(f"{couriers}")
             print("Courier successfully updated!")
 
+        #Edward - Delete Courier from the list. 
         if choice == 4:
-            # EDWARD
+            print('Here are the current couriers:')
+            #Print courier names and idexes.
+            for i in range(len(couriers)):
+                print(f'{i} {couriers[i]}') 
+            courier_to_del = int(input("Enter the index of the courier to remove: "))
+
+            couriers.pop(courier_to_del)
+            print(couriers)
+            print("Courier successfully removed")
             pass
 
 
