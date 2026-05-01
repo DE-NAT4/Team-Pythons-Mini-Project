@@ -111,7 +111,6 @@ while is_app_running == True:
             for index, order in enumerate(orders):
                 print(f"{index}: {order}")
 
-
         elif choice == 2:
             customer_name = input('Enter the customer name:  ')
             customer_address = input('Enter the customer address:  ')
@@ -126,8 +125,37 @@ while is_app_running == True:
             orders.append(order)
 
         # ELIF CHOICE == 3:
-            # MOHAMMED 
+        elif choice == 3:
+            print("--- Current Orders ---")
+            for index, item in enumerate(orders):
+                print(f"Index [{index}]: {item['customer_name']} - {item['status']}")
 
+            order_to_update = input("Enter the index of the order to update status: ")
+
+            if order_to_update.isdigit():
+                order_to_update_index = int(order_to_update)
+
+                if 0 <= order_to_update_index < len(orders):
+                    print("0: preparing")
+                    print("1: out-for-delivery")
+                    print("2: delivered")
+
+                    status_choice = input("Choose new status: ")
+
+                    if status_choice == "0":
+                        orders[order_to_update_index]['status'] = "preparing"
+                    elif status_choice == "1":
+                        orders[order_to_update_index]['status'] = "out-for-delivery"
+                    elif status_choice == "2":
+                        orders[order_to_update_index]['status'] = "delivered"
+                    else:
+                        print("Invalid choice")
+
+                    print("Order status updated!")
+                else:
+                    print("Index out of range")
+            else:
+                print("Please enter a number")
        
         elif choice == 4:
             print("--- Current Orders ---")
@@ -175,8 +203,23 @@ while is_app_running == True:
                 print("Error: Please enter a number.")
 
 
-        # ELIF CHOICE == 5:
-            # ISHAK 
+        # ELIF CHOICE == 5: Ishak
+        
+        elif choice == 5:
+            print("Current Orders")
+            for index, item in enumerate(orders): #enumerate gives a cleaner output compared to for in range
+                print(f"Index [{index}], {item['customer_name']}")
+            order_delete = input("Enter the index of the order you want to delete: ")
+            if order_delete. isdigit():#checks to see if its even an integer
+                if int(order_delete) >= 0 and int(order_delete) < len(orders):
+                    orders.pop(int(order_delete))
+                    print(f"{orders}")
+                    print("Order successfully removed")
+                else:
+                    print("Invalid index entered. Please try again")
+            else:
+                print("Please enter a number") # make sure to push (ask for verification first)
+                   
 
 
 # ============================================================================
@@ -212,10 +255,26 @@ while is_app_running == True:
 
         if choice == 3:
             # PAWAN 
-            pass
+            print('Here are couriers:')
+            for i in range(len(couriers)):
+                print(f'{i} {couriers[i]}')
+            select_update_list = int(input("Select the courier you would like to change: "))
+            new_courier_name = input("Enter new courier name ")
+            couriers[select_update_list] = new_courier_name
+            print(f"{couriers}")
+            print("Courier successfully updated!")
 
+        #Edward - Delete Courier from the list. 
         if choice == 4:
-            # EDWARD
+            print('Here are the current couriers:')
+            #Print courier names and idexes.
+            for i in range(len(couriers)):
+                print(f'{i} {couriers[i]}') 
+            courier_to_del = int(input("Enter the index of the courier to remove: "))
+
+            couriers.pop(courier_to_del)
+            print(couriers)
+            print("Courier successfully removed")
             pass
 
 
