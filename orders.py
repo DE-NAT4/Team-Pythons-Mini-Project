@@ -1,3 +1,24 @@
+import csv
+
+def create_order_menu():
+    orders_list = []
+    try:
+        with open('orders.csv', 'r') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                orders_list.append(dict(row))
+                print(orders_list)
+        return orders_list
+    except FileNotFoundError:
+        return []
+
+def save_orders_to_csv(orders_list):
+    with open('orders.csv', 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=['customer_name', 'customer_address', 'customer_phone_number', 'status'])
+        writer.writeheader()
+        writer.writerows(orders_list) 
+
+
 def update_order_details(orders):
     print("--- Current Orders ---")
     for index, item in enumerate(orders):
@@ -11,7 +32,7 @@ def update_order_details(orders):
         if order_to_update_index >= 0 and order_to_update_index < len(orders):
             selected_order = orders[order_to_update_index]
 
-            print("\nUpdating orders. Press Enter to keep the current value.")
+            print("Updating orders. Press Enter to keep the current value.")
 
             new_order_name = input("New Name (" + selected_order['customer_name'] + "): ")
             if new_order_name != "":

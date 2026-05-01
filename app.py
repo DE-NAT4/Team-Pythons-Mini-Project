@@ -2,11 +2,10 @@ from products import *
 from orders import *
 from courier import *
 
-
 # ================================================================================
 
 Products = ["Mocha", "Americano", "Chai Latte", "Cappaccino", "Cheese Sandwich"]
-orders = []
+orders = create_order_menu()  
 couriers = ['Zohran', 'Yasmin', 'Xavier']
 
 # ================================================================================
@@ -26,7 +25,6 @@ order = {
     'status': 'preparing',
 }
 orders.append(order)
-
 
 # ================================================================================
 

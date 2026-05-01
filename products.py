@@ -1,5 +1,3 @@
-
-
 # FUNCTION TO REPLACE THE PRODUCT SIDE NAVIGATION MENU
 def display_products_navigation_menu():
     print('''
