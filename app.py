@@ -1,11 +1,12 @@
 from products import *
 from orders import *
+from couriers import *
 
 # ================================================================================
 
 Products = create_product_menu()
 orders = []
-couriers = ['Zohran', 'Yasmin', 'Xavier']
+couriers = load_couriers()
 
 # ================================================================================
 
