@@ -1,32 +1,4 @@
-THIS CAN BE FOUND AROUND LINE 92:
-
-print('''
-                ----  CAFFE APP  ----
-                     -- Orders --
-              
-        0: Return to main menu
-        1: View orders
-        2: Add order
-        3: Update order status
-        4: Update order info
-        5: Delete order
-              ''')
-        choice = int(input("Choose an Option:  "))
-
-MOHAMMED == 0: Return to main menu
-SAHOUR == 1: VIEW ORDERS
-PAWANDEEP == 2: ADD AN ORDER
-MOHAMMED == 3: UPDATE JUST THE ORDER'S STATUS 
-EDWARD == 4: UPDATE THE WHOLE ORDERS info
-ISHAK == 5: DELETE ORDER
-
-EDWARD == EXTRA STRETCH GOAL XD - Create a function called product_menu()
-                                  that prints a nice-looking display of options
-                                  for when the user selects the product side of
-                                  the app: {View Products, Add Products etc}
-
-
-========================================================================================
+=======
                        WEEK THREE PSUEDO CODE  - COURIERS
 
 print('''
@@ -52,3 +24,19 @@ EDWARD == EXTRA STRETCH GOAL ===> Move all product related functions to product.
                                   and create a new function called update_product(products)
                                   that takes the product list as input and produces no output. 
                                   It should do the work of ELIF 3: update product.
+
+
+==================================================
+
+           DUE FOR WEDNESDAY 6TH MAY
+
+FUNCTIONS TASKS
+
+SAHOUR = CREATE FUNCTIONS FOR ALL PRODUCT SIDE ELIFS
+EDWARD = CREATE FUNCTIONS FOR ALL ORDER SIDE ELIFS
+ISHAK = CREATE FUNCTIONS FOR COURIER SIDE ELIF 1 AND 3
+MOHAMMED = CREATE FUNCTIONS FOR COURIER SIDE ELIF 2 AND 4
+
+DICTIONARY TASKS
+
+SAHOUR = 
