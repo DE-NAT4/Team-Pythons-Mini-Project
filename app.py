@@ -1,11 +1,12 @@
 from products import *
 from orders import *
+from couriers import *
 
 # ================================================================================
 
 Products = create_product_menu()
 orders = []
-couriers = ['Zohran', 'Yasmin', 'Xavier']
+couriers = load_couriers()
 
 # ================================================================================
 
@@ -249,10 +250,11 @@ while is_app_running == True:
             for index, courier in enumerate(couriers):
                 print(f"{index}: {courier}")
 
-        if choice == 2:
-            # ISHAK
-            pass
-
+        elif choice == 2:
+            new_courier = input("Enter courier name: ")
+            couriers.append(new_courier)
+            print(f"{new_courier} added to the list.")
+            
         if choice == 3:
             # PAWAN 
             print('Here are couriers:')
