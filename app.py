@@ -59,12 +59,8 @@ while is_app_running == True:
             display_products(Products)
 
         elif product_choice == 2:
-            new_product = input("Enter product name: ")
-            Products.append(new_product)
-            print(f" Here is the menu {Products}")
-            print("Product successfully added!")
+            add_product(Products)
         
-
         elif product_choice == 3:
             print('Here are the menu items:')
             for i in range(len(Products)):

@@ -31,6 +31,13 @@ def display_products(products_menu):
     print(printable_lines)
 
 
+def add_product(Products): 
+    new_product = input("Enter product name: ")
+    Products.append(new_product)
+    print(f" Here is the menu {Products}")
+    print("Product successfully added!") 
+
+
 # FUNCTION TO REPLACE ELIF 2: ADD PRODUCT
 # STRETCH TASK FOR ISHAK, SAHOUR, MOHAMMED - FIRST COME FIRST SERVE
 # Look at elif 2 code and more-or-less copy it over here 
