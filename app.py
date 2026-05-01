@@ -109,8 +109,11 @@ while is_app_running == True:
             pass
             # MOHAMMED
         
-        # ELIF CHOICE == 1:
-            # SAHOUR 
+        
+        elif choice == "1":
+            print("\nOrders List:")
+            for index, order in enumerate(orders):
+                print(f"{index}: {order}")
 
 
         elif choice == 2:
@@ -217,9 +220,10 @@ while is_app_running == True:
             # MOHAMMED
             pass
 
-        if choice == 1:
-            # SAHOUR
-            pass
+        elif choice == 1:
+            print("\nCouriers List:")
+            for index, courier in enumerate(couriers):
+                print(f"{index}: {courier}")
 
         if choice == 2:
             # ISHAK
