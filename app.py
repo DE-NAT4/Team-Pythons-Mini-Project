@@ -176,8 +176,23 @@ while is_app_running == True:
                 print("Error: Please enter a number.")
 
 
-        # ELIF CHOICE == 5:
-            # ISHAK 
+        # ELIF CHOICE == 5: Ishak
+        
+        elif choice == 5:
+            print("Current Orders")
+            for index, item in enumerate(orders): #enumerate gives a cleaner output compared to for in range
+                print(f"Index [{index}], {item['customer_name']}")
+            order_delete = input("Enter the index of the order you want to delete: ")
+            if order_delete. isdigit():#checks to see if its even an integer
+                if int(order_delete) >= 0 and int(order_delete) < len(orders):
+                    orders.pop(int(order_delete))
+                    print(f"{orders}")
+                    print("Order successfully removed")
+                else:
+                    print("Invalid index entered. Please try again")
+            else:
+                print("Please enter a number") # make sure to push (ask for verification first)
+                   
 
 
 # ============================================================================
