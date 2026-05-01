@@ -3,7 +3,7 @@ from orders import *
 
 # ================================================================================
 
-Products = ["Mocha", "Americano", "Chai Latte", "Cappaccino", "Cheese Sandwich"]
+Products = create_product_menu()
 orders = []
 couriers = ['Zohran', 'Yasmin', 'Xavier']
 

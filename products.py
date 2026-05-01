@@ -1,3 +1,16 @@
+import csv
+
+
+# FUNCTION TO EXTRACT PRODUCT DATA FROM CSV
+def create_product_menu():
+    result = []
+    with open('products.csv', mode='r', newline='') as data:
+        reader = csv.reader(data)
+        next(reader, None)
+        for row in reader:
+            result.append(row[0]) 
+    return result
+
 
 
 # FUNCTION TO REPLACE THE PRODUCT SIDE NAVIGATION MENU
