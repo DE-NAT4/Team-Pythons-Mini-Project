@@ -119,7 +119,8 @@ while is_app_running == True:
             add_order(order, orders) 
 
         # ELIF CHOICE == 3:
-            # MOHAMMED 
+            # MOHAMMED
+        elif choice == 3: 
             update_order_status(orders)
 
        #Edward - Edit Orders. 
