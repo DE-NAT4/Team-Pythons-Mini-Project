@@ -111,6 +111,7 @@ while is_app_running == True:
         
         # ELIF CHOICE == 1:
             # SAHOUR 
+        elif choice == 1: 
             view_orders(orders)
 
 
@@ -126,6 +127,7 @@ while is_app_running == True:
             update_order_details(orders)
 
         # ELIF CHOICE == 5:
+        elif choice == 5:
             delete_order(orders)
 
 
