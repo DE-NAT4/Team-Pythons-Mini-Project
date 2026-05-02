@@ -5,7 +5,7 @@ from courier import *
 # ================================================================================
 
 Products = ["Mocha", "Americano", "Chai Latte", "Cappaccino", "Cheese Sandwich"]
-orders = create_order_menu()  
+orders = create_order_menu()
 couriers = ['Zohran', 'Yasmin', 'Xavier']
 
 # ================================================================================
@@ -111,30 +111,22 @@ while is_app_running == True:
         
         # ELIF CHOICE == 1:
             # SAHOUR 
+            view_orders(orders)
 
 
         elif choice == 2:
-            customer_name = input('Enter the customer name:  ')
-            customer_address = input('Enter the customer address:  ')
-            customer_phone_number = input('Enter the customer phone number:  ')
-
-            order = {}
-            order['customer_name'] = customer_name
-            order['customer_address'] = customer_address
-            order['customer_phone_number'] = customer_phone_number
-            order['status'] = 'preparing'
-
-            orders.append(order)
+            add_order(order, orders) 
 
         # ELIF CHOICE == 3:
             # MOHAMMED 
+            update_order_status(orders)
 
        #Edward - Edit Orders. 
         elif choice == 4:
             update_order_details(orders)
 
         # ELIF CHOICE == 5:
-            # ISHAK 
+            delete_order(orders)
 
 
 # ============================================================================
