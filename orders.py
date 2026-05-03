@@ -9,7 +9,6 @@ def create_order_menu():
             reader = csv.DictReader(f)
             for row in reader:
                 orders_list.append(dict(row))
-                print(orders_list)
         return orders_list
     except FileNotFoundError:
         return []

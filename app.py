@@ -4,10 +4,11 @@ from courier import *
 
 # ================================================================================
 
-Products = ["Mocha", "Americano", "Chai Latte", "Cappaccino", "Cheese Sandwich"]
+Products = create_product_menu()
 orders = create_order_menu()
 couriers = ['Zohran', 'Yasmin', 'Xavier']
 
+create_product_menu()
 # ================================================================================
 
 order = {
