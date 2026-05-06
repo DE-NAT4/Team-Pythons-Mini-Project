@@ -1,3 +1,14 @@
+import csv
+
+def load_couriers():
+    couriers_list = []
+    with open('courier.csv', 'r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            couriers_list.append(dict(row))
+    return couriers_list
+
+
 def delete_courier(couriers):
     print('Here are the current couriers:')
     # Print courier names and indexes.

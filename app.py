@@ -6,9 +6,10 @@ from courier import *
 
 Products = create_product_menu()
 orders = create_order_menu()
-couriers = ['Zohran', 'Yasmin', 'Xavier']
+couriers = load_couriers()
 
-create_product_menu()
+#create_product_menu()
+load_couriers()
 # ================================================================================
 
 order = {
