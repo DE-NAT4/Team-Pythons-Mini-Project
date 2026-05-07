@@ -1,7 +1,7 @@
-from products import *
 from orders import *
 from couriers import *
 from display import *
+from products import *
 
 # ================================================================================
 
@@ -54,7 +54,7 @@ while is_app_running == True:
 
     elif choice == 1: 
         display_products_navigation_menu()
-        product_choice = int(input("Choose an Option: "))
+        product_choice = int(input("\nChoose an Option: "))
 
         if choice == 0:
             print("Returning to Main Menu...")
@@ -91,19 +91,17 @@ while is_app_running == True:
 # This is the order side of the app
 
     elif choice == 2:
-        
-        print('''
-                ----  CAFFE APP  ----
-                     -- Orders --
-              
-        0: Return to main menu
-        1: View orders
-        2: Add order
-        3: Update order status
-        4: Update order info
-        5: Delete order
-              ''')
-        choice = int(input("Choose an Option:  "))
+
+        display_header("ORDERS MENU")
+
+        print("\n0: Return to main menu")
+        print("1: View orders")
+        print("2: Add order")
+        print("3: Update order status")
+        print("4: Update order info")
+        print("5: Delete order")
+
+        choice = int(input("\nChoose an Option:  "))
 
         if choice == 0:
             print("Returning to main menu...")
@@ -160,7 +158,7 @@ while is_app_running == True:
             else:
                 print("Please enter a number")
        
-        elif choice == 4:
+    elif choice == 4:
             print("--- Current Orders ---")
             # Print the current orders.  
             for index, item in enumerate(orders):
@@ -208,7 +206,7 @@ while is_app_running == True:
 
         # ELIF CHOICE == 5: Ishak
         
-        elif choice == 5:
+    elif choice == 5:
             print("Current Orders")
             for index, item in enumerate(orders): #enumerate gives a cleaner output compared to for in range
                 print(f"Index [{index}], {item['customer_name']}")
@@ -230,18 +228,16 @@ while is_app_running == True:
 
 
     elif choice == 3:
-        
-        print('''
-                ----  CAFFE APP  ----
-                     -- Couriers --
-              
-        0: Return to main menu
-        1: View couriers
-        2: Add a courier
-        3: Update courier information
-        4: Delete courier information
-              ''')
-        choice = int(input("Choose an Option:  "))
+
+        display_header("COURIERS MENU")
+
+        print("\n0: Return to main menu")
+        print("1: View couriers")
+        print("2: Add a courier")
+        print("3: Update courier information")
+        print("4: Delete courier information")
+
+        choice = int(input("\nChoose an Option:  "))
 
         if choice == 0:
             print("Returning to main menu...")
