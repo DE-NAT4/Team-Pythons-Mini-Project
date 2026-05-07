@@ -50,7 +50,6 @@ def update_order_details(orders):
             new_status = input("New Status (" + selected_order['status'] + "): ")
             if new_status != "":
                 selected_order['status'] = new_status
-
             print("Update complete!")
         else:
             print("Error: Index out of range.")
@@ -69,6 +68,11 @@ def add_order(order, orders):
     order['status'] = 'preparing'
 
     orders.append(order)
+    #Saving that order to csv. 
+    with open('orders.csv', 'a', newline='') as file:
+        fieldnames = ['customer_name', 'customer_address', 'customer_phone_number', 'status']
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer.writerow(order)
 
 def view_orders(orders):
     print("\nOrders List:")
