@@ -8,7 +8,7 @@ Products = create_product_menu()
 orders = create_order_menu()
 couriers = load_couriers()
 
-#create_product_menu()
+create_product_menu()
 load_couriers()
 # ================================================================================
 
@@ -62,7 +62,11 @@ while is_app_running == True:
 
         elif product_choice == 2:
             new_product = input("Enter product name: ")
-            Products.append(new_product)
+            price = float(input("Enter product price: ")) #Float because of decminal points for price. 
+            Products.append(f"{new_product} - ${price}") 
+            with open('products.csv', 'a', newline='') as file:
+                writer = csv.writer(file)
+                writer.writerow([new_product, price])
             print(f" Here is the menu {Products}")
             print("Product successfully added!")
         
