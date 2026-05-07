@@ -63,25 +63,10 @@ while is_app_running == True:
             add_product(Products)
         
         elif product_choice == 3:
-            print('Here are the menu items:')
-            for i in range(len(Products)):
-                print(f'{i} {Products[i]}')
-            
-            select_update_list = int(input("Select the product you would like to change: "))
-            new_product_name = input("Enter new product name ")
-            Products[select_update_list] = new_product_name
-            print(f"{Products}")
-            print("Product successfully updated!")
+            update_product(Products)
 
         elif product_choice == 4:
-            print('Here are the menu items:')
-            for i in range(len(Products)):
-                print(f'{i} {Products[i]}')
-
-            select_delete_product = int(input("Select the product you would like to remove: "))
-            Products.pop(select_delete_product)
-            print(f"{Products}")
-            print("Product successfully removed")
+            delete_product(Products) 
 
 
 # ============================================================================
