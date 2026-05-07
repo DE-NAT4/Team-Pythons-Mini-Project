@@ -165,8 +165,19 @@ while is_app_running == True:
             pass
 
         if choice == 2:
-            # ISHAK
-            pass
+            new_courier = input("Enter courier name: ")
+            courier_Veichle = input("Enter veichle type: ")
+            
+            new_entry = {"Courier Name": new_courier, "Courier vehicle": courier_Veichle}
+
+            couriers.append(new_entry)
+             
+            with open('courier.csv', 'a', newline='') as file:
+                fieldnames = ["Courier Name", "Courier vehicle"]
+                writer = csv.DictWriter(file, fieldnames=fieldnames)
+                writer.writerow(new_entry)
+            
+            print(f"{new_courier} added to the list.")
 
         if choice == 3:
             # PAWAN 
