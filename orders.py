@@ -1,6 +1,5 @@
 import csv
 
-
 #---------------CSV STUFF---------------------
 def create_order_menu():
     orders_list = []

@@ -13,13 +13,6 @@ def display_products_navigation_menu():
           4: Delete a Product
           ''')
 
-def create_product_menu():
-    result = []
-    with open('products.csv', mode='r', newline='') as data:
-        reader = csv.DictReader(data)
-        for row in reader:
-            result.append(row)              
-    return result
 
 # FUNCTION TO REPLACE ELIF 1
 def display_products(products_menu):

@@ -4,11 +4,11 @@ from courier import *
 
 # ================================================================================
 
-Products = create_product_menu()
+Products = ["Mocha", "Americano", "Chai Latte", "Cappaccino", "Cheese Sandwich"]
 orders = create_order_menu()
 couriers = load_couriers()
 
-create_product_menu()
+
 load_couriers()
 # ================================================================================
 
@@ -64,10 +64,6 @@ while is_app_running == True:
             new_product = input("Enter product name: ")
             price = float(input("Enter product price: ")) #Float because of decminal points for price. 
             Products.append(f"{new_product} - ${price}") 
-            with open('products.csv', 'a', newline='') as file:
-                writer = csv.writer(file)
-                writer.writerow([new_product, price])
-            print(f" Here is the menu {Products}")
             print("Product successfully added!")
         
 
