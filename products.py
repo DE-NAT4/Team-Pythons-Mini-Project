@@ -13,6 +13,7 @@ def create_product_menu():
 
 
 
+
 # FUNCTION TO REPLACE THE PRODUCT SIDE NAVIGATION MENU
 def display_products_navigation_menu():
     print('''
@@ -44,7 +45,7 @@ def display_products(products_menu):
     print(printable_lines)
 
 #FUNCTION UPDATED REPLACING ELIF 1
-def view_products():
+def view_products(Products):
     print("\nProducts List: ")
     for index, product in enumerate(Products): 
         print(f"{index}: {product["name"]} - £{product["price"]}")

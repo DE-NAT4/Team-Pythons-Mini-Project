@@ -1,11 +1,3 @@
-Product Name
-Mocha
-Americano
-Chai Latte
-Cappaccino
-Cheese Sandwich
-
-
 Products = [
     {"name": "Mocha", "price": 3.80}, 
     {"name": "Americano", "price": 2.70},
