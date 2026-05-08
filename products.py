@@ -1,4 +1,6 @@
 import csv
+from display import display_header
+
 
 
 # FUNCTION TO EXTRACT PRODUCT DATA FROM CSV
@@ -15,6 +17,16 @@ def create_product_menu():
 
 # FUNCTION TO REPLACE THE PRODUCT SIDE NAVIGATION MENU
 def display_products_navigation_menu():
+
+    print("TESTING NEW PRODUCTS FILE")
+    display_header("PRODUCTS MENU")
+
+    print("\n0: Return to main menu")
+    print("1: View products")
+    print("2: Add product")
+    print("3: Update product")
+    print("4: Delete product")
+
     print('''
                 ----  CAFFE APP  ----
                     -- Products --
@@ -25,6 +37,7 @@ def display_products_navigation_menu():
           3: Update a Product
           4: Delete a Product
           ''')
+
 
 
 # FUNCTION TO REPLACE ELIF 1
@@ -43,6 +56,12 @@ def display_products(products_menu):
           Products:''')
     print(printable_lines)
 
+
+def add_product(Products): 
+    new_product = input("Enter product name: ")
+    Products.append(new_product)
+    print(f" Here is the menu {Products}")
+    print("Product successfully added!") 
 #FUNCTION UPDATED REPLACING ELIF 1
 def view_products():
     print("\nProducts List: ")
@@ -82,6 +101,7 @@ def delete_product(Products):
     Products.pop(select_delete_product)
     print(f"{Products}")
     print("Product successfully removed")
+
 
 
 
