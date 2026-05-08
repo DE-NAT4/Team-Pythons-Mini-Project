@@ -10,6 +10,7 @@ def load_couriers():
             result.append(row[0])
     return result
 
+
 # Function to add a new courier --- elif choice == 2:
 def add_courier(couriers):
     new_courier = input("\nEnter courier name: ")
@@ -36,3 +37,4 @@ def update_courier(couriers):
             print("Invalid index entered.")
     else:
         print("Please enter a number.")
+
