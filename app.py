@@ -6,8 +6,18 @@ from couriers import *
 
 Products = create_product_menu()
 orders = []
+
+from courier import *
+
+# ================================================================================
+
+Products = ["Mocha", "Americano", "Chai Latte", "Cappaccino", "Cheese Sandwich"]
+orders = create_order_menu()
+
 couriers = load_couriers()
 
+
+load_couriers()
 # ================================================================================
 
 order = {
@@ -25,7 +35,6 @@ order = {
     'status': 'preparing',
 }
 orders.append(order)
-
 
 # ================================================================================
 
@@ -60,28 +69,20 @@ while is_app_running == True:
             display_products(Products)
 
         elif product_choice == 2:
+
             add_product(Products)
+
+            new_product = input("Enter product name: ")
+            price = float(input("Enter product price: ")) #Float because of decminal points for price. 
+            Products.append(f"{new_product} - ${price}") 
+            print("Product successfully added!")
+
         
         elif product_choice == 3:
-            print('Here are the menu items:')
-            for i in range(len(Products)):
-                print(f'{i} {Products[i]}')
-            
-            select_update_list = int(input("Select the product you would like to change: "))
-            new_product_name = input("Enter new product name ")
-            Products[select_update_list] = new_product_name
-            print(f"{Products}")
-            print("Product successfully updated!")
+            update_product(Products)
 
         elif product_choice == 4:
-            print('Here are the menu items:')
-            for i in range(len(Products)):
-                print(f'{i} {Products[i]}')
-
-            select_delete_product = int(input("Select the product you would like to remove: "))
-            Products.pop(select_delete_product)
-            print(f"{Products}")
-            print("Product successfully removed")
+            delete_product(Products) 
 
 
 # ============================================================================
@@ -105,27 +106,25 @@ while is_app_running == True:
         if choice == 0:
             pass
             # MOHAMMED
-        
+
         
         elif choice == "1":
             print("\nOrders List:")
             for index, order in enumerate(orders):
                 print(f"{index}: {order}")
 
+        # ELIF CHOICE == 1:
+            # SAHOUR 
+        elif choice == 1: 
+            view_orders(orders)
+
+
+
         elif choice == 2:
-            customer_name = input('Enter the customer name:  ')
-            customer_address = input('Enter the customer address:  ')
-            customer_phone_number = input('Enter the customer phone number:  ')
-
-            order = {}
-            order['customer_name'] = customer_name
-            order['customer_address'] = customer_address
-            order['customer_phone_number'] = customer_phone_number
-            order['status'] = 'preparing'
-
-            orders.append(order)
+            add_order(order, orders) 
 
         # ELIF CHOICE == 3:
+
         elif choice == 3:
             print("--- Current Orders ---")
             for index, item in enumerate(orders):
@@ -158,50 +157,15 @@ while is_app_running == True:
             else:
                 print("Please enter a number")
        
+
+            # MOHAMMED
+        elif choice == 3: 
+            update_order_status(orders)
+
+       #Edward - Edit Orders. 
+
         elif choice == 4:
-            print("--- Current Orders ---")
-            # Print the current orders.  
-            for index, item in enumerate(orders):
-                print(f"Index [{index}]: {item['customer_name']} - {item['status']}")
-
-            # User enters number for which order to update from that list.
-            order_to_update = input("Enter the index of the order to update: ")
-
-            # Check if number is valid
-            if order_to_update.isdigit():
-                order_to_update_index = int(order_to_update)
-
-                if order_to_update_index >= 0 and order_to_update_index < len(orders):
-                    
-                    selected_order = orders[order_to_update_index]
-
-                    print("\nUpdating orders. Press Enter to keep the current value.")
-
-                    # Updating order name
-                    new_order_name = input("New Name (" + selected_order['customer_name'] + "): ")
-                    if new_order_name != "":
-                        selected_order['customer_name'] = new_order_name
-
-                    # Updating Phone Number 
-                    new_phone = input("New Phone Number (" + selected_order['customer_phone_number'] + "): ")
-                    if new_phone != "":
-                        selected_order['customer_phone_number'] = new_phone
-                    
-                    #Updating Address
-                    new_address = input("New Address (" + selected_order['customer_address'] + "): ")
-                    if new_address != "":
-                        selected_order['customer_address'] = new_address
-                    #Updating Order status
-                    new_status = input("New Status (" + selected_order['status'] + "): ")
-                    if new_status != "":
-                        selected_order['status'] = new_status
-
-                        
-                    print("Update complete!")
-                else:
-                    print("Error: Index out of range.")
-            else:
-                print("Error: Please enter a number.")
+            update_order_details(orders)
 
 
         # ELIF CHOICE == 5: Ishak
@@ -221,6 +185,11 @@ while is_app_running == True:
             else:
                 print("Please enter a number") # make sure to push (ask for verification first)
                    
+
+        # ELIF CHOICE == 5:
+        elif choice == 5:
+            delete_order(orders)
+
 
 
 # ============================================================================
@@ -245,10 +214,31 @@ while is_app_running == True:
             # MOHAMMED
             pass
 
+
         elif choice == 1:
             print("\nCouriers List:")
             for index, courier in enumerate(couriers):
                 print(f"{index}: {courier}")
+
+        if choice == 1:
+            # SAHOUR
+            pass
+
+        if choice == 2:
+            new_courier = input("Enter courier name: ")
+            courier_Veichle = input("Enter veichle type: ")
+            
+            new_entry = {"Courier Name": new_courier, "Courier vehicle": courier_Veichle}
+
+            couriers.append(new_entry)
+             
+            with open('courier.csv', 'a', newline='') as file:
+                fieldnames = ["Courier Name", "Courier vehicle"]
+                writer = csv.DictWriter(file, fieldnames=fieldnames)
+                writer.writerow(new_entry)
+            
+            print(f"{new_courier} added to the list.")
+
 
         elif choice == 2:
             new_courier = input("Enter courier name: ")
@@ -268,44 +258,5 @@ while is_app_running == True:
 
         #Edward - Delete Courier from the list. 
         if choice == 4:
-            print('Here are the current couriers:')
-            #Print courier names and idexes.
-            for i in range(len(couriers)):
-                print(f'{i} {couriers[i]}') 
-            courier_to_del = int(input("Enter the index of the courier to remove: "))
-
-            couriers.pop(courier_to_del)
-            print(couriers)
-            print("Courier successfully removed")
-            pass
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            delete_courier(couriers)
 
