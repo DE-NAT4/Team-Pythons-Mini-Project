@@ -2,22 +2,25 @@ import csv
 from display import display_header
 
 
+#---------------CSV STUFF---------------------
 
-# FUNCTION TO EXTRACT PRODUCT DATA FROM CSV
+
 def create_product_menu():
     result = []
     with open('products.csv', mode='r', newline='') as data:
-        reader = csv.reader(data)
-        next(reader, None)
+        reader = csv.DictReader(data)
         for row in reader:
-            result.append(row[0]) 
+            result.append(row)
     return result
 
 
+# NEED A save_products_to_csv() FUNCTION TOO
 
 
-# FUNCTION TO REPLACE THE PRODUCT SIDE NAVIGATION MENU
-def display_products_navigation_menu():
+#---------------APP FUNCTIONS---------------------
+
+
+def display_products_navigation_menu(): # THIS NEEDS TO MOVE TO DISPLAY.PY
 
     print("TESTING NEW PRODUCTS FILE")
     display_header("PRODUCTS MENU")
@@ -39,30 +42,8 @@ def display_products_navigation_menu():
           4: Delete a Product
           ''')
 
+ 
 
-
-# FUNCTION TO REPLACE ELIF 1
-def display_products(products_menu):
-    lines = []
-    for i in range(len(products_menu)):
-        lines.append(f'{i}: {products_menu[i]}')
-    
-    printable_lines = '''\
-''' + '\n'.join(lines) + '''
-'''
-    print('''
-                ----  CAFFE APP  ----
-                    -- Products --
-          
-          Products:''')
-    print(printable_lines)
-
-
-def add_product(Products): 
-    new_product = input("Enter product name: ")
-    Products.append(new_product)
-    print(f" Here is the menu {Products}")
-    print("Product successfully added!") 
 #FUNCTION UPDATED REPLACING ELIF 1
 def view_products(Products):
     print("\nProducts List: ")
@@ -82,41 +63,26 @@ def add_product(Products):
     print(f" Here is the menu {Products}")
     print("Product successfully added!")
 
+
 #FUNCTION TO REPLACE ELIF 3
 def update_product(Products): 
-    display_products()
+    view_products(Products)
     select_update_list = int(input("Select the product you would like to change: "))
 
     new_product_name = input("Enter new product name ")
     new_product_price = float(input("Enter new product price: "))
 
-    Products[select_update_list] = new_product_name #Go to that product, then change its name
-    Products[select_update_list] = new_product_price
+    Products[select_update_list]['name'] = new_product_name #Go to that product, then change its name
+    Products[select_update_list]['price'] = new_product_price
     print(f"{Products}")
     print("Product successfully updated!")
 
+
 #FUNCTION TO REPLACE ELIF 4
 def delete_product(Products): 
-    display_products(Products) 
+    view_products(Products) 
     select_delete_product = int(input("Select the product you would like to remove: "))
     Products.pop(select_delete_product)
     print(f"{Products}")
     print("Product successfully removed")
 
-
-
-
-# FUNCTION TO REPLACE ELIF 2: ADD PRODUCT
-# STRETCH TASK FOR ISHAK, SAHOUR, MOHAMMED - FIRST COME FIRST SERVE
-# Look at elif 2 code and more-or-less copy it over here 
-
-
-# FUNCTION TO REPLACE ELIF 3
-#def update_product(products_menu):
-#   display_products(products_menu)
-#   GET INPUT FOR WHICH PRODUCT TO CHANGE
-#   GET INPUT FOR NEW PRODUCT NAME
-#   ETC - Look at elif 3 for remaining steps
-
-# FUNCTION TO REPLACE ELIF 4: DELETE A PRODUCT
-# STRETCH TASK FOR ANYONE WHO HASN'T HAD A GO 

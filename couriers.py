@@ -1,23 +1,29 @@
 import csv
 
+
+#---------------CSV FUNCTIONS---------------------
+
+
 # FUNCTION TO EXTRACT COURIER DATA FROM CSV
 def load_couriers():
-    result = []
-    with open ('couriers.csv', mode='r', newline='') as data:
-        reader = csv.reader(data)
-        next(reader, None) #skips header
+    couriers_list = []
+    with open('couriers.csv', 'r') as f:
+        reader = csv.DictReader(f)
         for row in reader:
-            result.append(row[0])
-    return result
+            couriers_list.append(dict(row))
+    return couriers_list
 
 
-# Function to add a new courier --- elif choice == 2:
-def add_courier(couriers):
-    new_courier = input("\nEnter courier name: ")
-    couriers.append(new_courier)
-    print(f"\n{new_courier} added to the courier list.")
+# FUNCTION TO SAVE COURIER DATA TO CSV NEEDED
 
-# Function to update courier information --- elif choice == 3:
+
+#---------------APP FUNCTIONS---------------------
+
+
+# FUNCTION TO ADD A COURIER NEEDED
+
+
+
 def update_courier(couriers):
     print("\nHere are the current couriers:")
 
@@ -31,10 +37,26 @@ def update_courier(couriers):
 
         if courier_to_update_index >= 0 and courier_to_update_index < len(couriers):
             new_courier_name = input("Enter new courier name: ")
-            couriers[courier_to_update_index] = new_courier_name
+            new_courier_vehicle = input('Enter new couriers vehicle: ')
+            couriers[courier_to_update_index]['name'] = new_courier_name
+            couriers[courier_to_update]['vehicle'] = new_courier_vehicle
             print("\nCourier successfully updated!")
         else:
             print("Invalid index entered.")
     else:
         print("Please enter a number.")
+
+
+def delete_courier(couriers):
+    print('Here are the current couriers:')
+    # Print courier names and indexes.
+    for i in range(len(couriers)):
+        print(f'{i} {couriers[i]}') 
+
+    # Moved outside the loop so it only asks once
+    courier_to_del = int(input("Enter the index of the courier to remove: "))
+
+    couriers.pop(courier_to_del)
+    print(couriers)
+    print("Courier successfully removed")
 
