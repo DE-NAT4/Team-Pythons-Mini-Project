@@ -15,11 +15,6 @@ def create_order_menu():
         return []
 
 
-def save_orders_to_csv(orders_list):
-    with open('orders.csv', 'w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=['customer_name', 'customer_address', 'customer_phone_number', 'status'])
-        writer.writeheader()
-        writer.writerows(orders_list) 
 
 #---------------APP FUNCTIONS---------------------
 
@@ -43,13 +38,6 @@ def add_order(orders):
     order['status'] = 'preparing'
 
     orders.append(order)
-    #Saving that order to csv. 
-    with open('orders.csv', 'a', newline='') as file:
-        fieldnames = ['customer_name', 'customer_address', 'customer_phone_number', 'status']
-        writer = csv.DictWriter(file, fieldnames=fieldnames)
-        writer.writerow(order)
-
-
 
 def update_order_status(orders):
     print("--- Current Orders ---")
