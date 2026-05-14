@@ -1,6 +1,8 @@
 from products import *
 from orders import *
 from couriers import *
+from display import *
+from save import *
 
 # ================================================================================
 
@@ -15,14 +17,14 @@ couriers = load_couriers()
 is_app_running = True
 
 while is_app_running == True:
-    display_header('Main Menu')
-    print("0: exit app")
-    print("1: Open product side")
-    print("2: Open the orders side")
-    print("3: Open the courier side")
-    choice = int(input("Select 0, 1, 2 or 3: "))
+    display_main_menu()
+    choice = int(input("\nSelect 0, 1, 2 or 3: "))
 
     if choice == 0: 
+        save_products_to_csv(Products)
+        save_orders_to_csv(orders)
+        save_couriers_to_csv(couriers)
+
         print("Exiting app") 
         is_app_running = False # This will finally fail the while loop condition
 
@@ -31,11 +33,11 @@ while is_app_running == True:
 # This is our product side of the app
 
     elif choice == 1: 
-        display_products_navigation_menu()
-        product_choice = int(input("Choose an Option: "))
+        display_product_navigation_menu()
+        product_choice = int(input("\nChoose an Option: "))
 
-        if choice == 0:
-            pass
+        if product_choice == 0:
+            print("Returning to Main Menu...")
 
         elif product_choice == 1:
             view_products(Products)
@@ -55,21 +57,11 @@ while is_app_running == True:
 
     elif choice == 2:
         
-        print('''
-                ----  CAFFE APP  ----
-                     -- Orders --
-              
-        0: Return to main menu
-        1: View orders
-        2: Add order
-        3: Update order status
-        4: Update order info
-        5: Delete order
-              ''')
-        choice = int(input("Choose an Option:  "))
+        display_order_menu()
+        choice = int(input("\nChoose an Option: "))
 
         if choice == 0:
-            pass
+            print("Returning to Main Menu...")
 
         elif choice == 1: 
             view_orders(orders)
@@ -98,21 +90,11 @@ while is_app_running == True:
 
     elif choice == 3:
         
-        print('''
-                ----  CAFFE APP  ----
-                     -- Couriers --
-              
-        0: Return to main menu
-        1: View couriers
-        2: Add a courier
-        3: Update courier information
-        4: Delete courier information
-              ''')
-        choice = int(input("Choose an Option:  "))
+        display_courier_menu()
+        choice = int(input("\nChoose an Option:  "))
 
         if choice == 0:
-            # MOHAMMED
-            pass
+            print("Returning to Main Menu...")
 
 
         elif choice == 1:

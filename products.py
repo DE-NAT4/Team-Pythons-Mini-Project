@@ -18,30 +18,6 @@ def create_product_menu():
 
 
 #---------------APP FUNCTIONS---------------------
-
-
-def display_products_navigation_menu(): # THIS NEEDS TO MOVE TO DISPLAY.PY
-
-    print("TESTING NEW PRODUCTS FILE")
-    display_header("PRODUCTS MENU")
-
-    print("\n0: Return to main menu")
-    print("1: View products")
-    print("2: Add product")
-    print("3: Update product")
-    print("4: Delete product")
-
-    print('''
-                ----  CAFFE APP  ----
-                    -- Products --
-          
-          0: Return to main menu
-          1: View Products
-          2: Add a Product
-          3: Update a Product
-          4: Delete a Product
-          ''')
-
  
 
 #FUNCTION UPDATED REPLACING ELIF 1
