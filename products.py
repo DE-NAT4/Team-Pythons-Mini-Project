@@ -63,6 +63,7 @@ def add_product(Products):
     Products.append(new_product)
     print(f" Here is the menu {Products}")
     print("Product successfully added!") 
+    
 #FUNCTION UPDATED REPLACING ELIF 1
 def view_products(Products):
     print("\nProducts List: ")
