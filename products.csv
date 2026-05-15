@@ -1,8 +1,9 @@
-Products = [
-    {"name": "Mocha", "price": 3.80}, 
-    {"name": "Americano", "price": 2.70},
-    {"name": "Chai Latte", "price": 3.60},
-    {"name": "Cappuccino", "price": 3.00},
-    {"name": "Cheese Sandwich", "price": 2.40}
-]
-
+name,price
+Mocha,3.80
+Americano,2.70
+Chai Latte,3.60
+Cappuccino,3.00
+Cheese Sandwich,2.40
+Wispa,2.00
+Lolly,3.00
+Omellete,1.50
