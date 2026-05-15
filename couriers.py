@@ -21,7 +21,10 @@ def load_couriers():
 
 
 # FUNCTION TO ADD A COURIER NEEDED
-
+def add_courier(couriers):
+    new_courier = input("\nEnter courier name: ")
+    couriers.append(new_courier)
+    print(f"\n{new_courier} added to the courier list.")
 
 
 def update_courier(couriers):
