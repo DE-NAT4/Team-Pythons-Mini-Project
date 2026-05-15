@@ -104,7 +104,7 @@ while is_app_running == True:
 
 
         if choice == 2:
-            update_courier(couriers)
+            add_courier(couriers)
 
             
         if choice == 3:
@@ -115,12 +115,5 @@ while is_app_running == True:
             delete_courier(couriers)
 
 
-# ============================================================================
-# APP CLOSED - SAVE TO CSV FILES NOW
 
-# FUNCTION TO SAVE PRODUCTS TO CSV
-
-# FUNCTION TO SAVE ORDERS TO CSV
-
-# FUNCTION TO SAVE COURIERS TO CSV
 
